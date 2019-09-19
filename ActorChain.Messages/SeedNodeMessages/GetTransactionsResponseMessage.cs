@@ -1,14 +1,14 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ActorChain.Messages.SeedNodeMessages
 {
-    public class GetTransactionsResponseMessage
-    {
-        public List<Transaction> Transactions { get; }
+	public class GetTransactionsResponseMessage
+	{
+		public List<Transaction> Transactions { get; }
 
-        public GetTransactionsResponseMessage (List<Transaction> transactions)
-        {
+		public GetTransactionsResponseMessage (List<Transaction> transactions)
+		{
 			Transactions = transactions;
-        }
-    }
+		}
+	}
 }
