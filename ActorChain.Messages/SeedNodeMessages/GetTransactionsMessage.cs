@@ -1,6 +1,7 @@
-﻿namespace ActorChain.Messages.SeedNodeMessages
+namespace ActorChain.Messages.SeedNodeMessages
 {
-	public class GetTransactionsMessage
-	{
-	}
+    public class GetTransactionsMessage 
+    { 
+
+    }
 }

@@ -1,7 +1,7 @@
-﻿namespace ActorChain.Messages.SeedNodeMessages
+namespace ActorChain.Messages.SeedNodeMessages
 {
-	public class GetLastTransactionHashMessage
-	{
-		
-	}
+    public class GetLastTransactionHashMessage
+    {
+
+    }
 }

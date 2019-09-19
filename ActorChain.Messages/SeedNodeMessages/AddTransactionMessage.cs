@@ -1,16 +1,16 @@
-﻿namespace ActorChain.Messages.SeedNodeMessages
+namespace ActorChain.Messages.SeedNodeMessages
 {
-	public class AddTransactionMessage
-	{
-		public string Sender { get; }
-		public string Receiver { get; }
-		public decimal Amount { get; }
+    public class AddTransactionMessage
+    {
+        public string Sender { get; }
+        public string Receiver { get; }
+        public decimal Amount { get; }
 
-		public AddTransactionMessage(string sender, string receiver, decimal amount)
-		{
-			Sender = sender;
-			Receiver = receiver;
-			Amount = amount;
-		}
-	}
+        public AddTransactionMessage (string sender, string receiver, decimal amount)
+        {
+            Sender = sender;
+            Receiver = receiver;
+            Amount = amount;
+        }
+    }
 }
