@@ -1,4 +1,4 @@
-﻿namespace ActorChain.Messages
+namespace ActorChain.Messages
 {
 	public class Transaction
 	{
