@@ -31,7 +31,7 @@ namespace ActorChain.SeedNode
 
 		public void Handle(GetLastTransactionHashMessage message)
 		{
-			throw new System.NotImplementedException();
+			Sender.Tell("0x989999");
 		}
 	}
 }

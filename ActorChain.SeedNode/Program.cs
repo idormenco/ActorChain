@@ -16,7 +16,7 @@ namespace ActorChain.SeedNode
 			    }
 			    remote {
 			        dot-netty.tcp {
-					    port = 0
+					    port = 8082
 					    hostname = localhost
 			        }
 			    }
@@ -25,7 +25,7 @@ namespace ActorChain.SeedNode
 
 			using (var system = ActorSystem.Create("SeedNodeSystem", config))
 			{
-				var seedNode = system.ActorOf(Props.Create<SeedNodeActor>());
+				var seedNode = system.ActorOf(Props.Create<SeedNodeActor>(),"SeedNode");
 				seedNode.Tell("hello from seed node");
 
 				Console.Read();

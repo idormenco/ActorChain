@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using ActorChain.Messages;
+using ActorChain.Messages.MinerMessages;
 using Akka.Actor;
 using Akka.Configuration;
 
@@ -26,7 +29,11 @@ namespace ActorChain.Miner
 			using (var system = ActorSystem.Create("MinerSystem", config))
 			{
 				var seedNode = system.ActorOf(Props.Create<MinerActor>());
-				seedNode.Tell("hello from miner");
+				var result = seedNode.Ask<bool>(new ValidateBlockMessage(new List<Transaction>().AsReadOnly(), 0, DateTimeOffset.UtcNow.ToUnixTimeSeconds(), null, "02002")).Result;
+
+				seedNode.Tell(new MineBlockMessage(new List<Transaction>().AsReadOnly(),"0202020" ));
+
+				Console.WriteLine(result);
 
 				Console.Read();
 			}
