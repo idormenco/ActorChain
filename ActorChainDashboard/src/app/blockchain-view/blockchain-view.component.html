@@ -1,5 +1,35 @@
-<mat-nav-list>
-    <a mat-list-item
-        href="..."
-        *ngFor="let block of blockchain"> {{ block.hash }} </a>
-</mat-nav-list>
+<div cass="container">
+    <p>
+        Blockchain lenght: {{blockchain?.length || 0}}
+    </p>
+    <div class="card-deck card-deck-scroll">
+        <div class="card"
+            *ngFor="let block of blockchain;let nr=index;let transactionVisible=false;">
+            <div class="card-body">
+                <h5 class="card-title">Block #{{nr +1}}</h5>
+                <div class="card-text block-small"><b>Hash:</b> {{block.hash}}</div>
+                <div class="card-text block-small"><b>PreviousHash:</b> {{block.previousHash}}</div>
+                <div class="card-text block-small"><b>Mined on:</b> {{block.timestamp}}</div>
+                <div class="card-text block-small"><b>Transactions (#{{block.transactions?.length || 0}})</b>
+                    <button *ngIf="block.transactions?.length"
+                        class="btn btn-link"
+                        (click)="transactionVisible =!transactionVisible">...</button>
+                </div>
+                <ul class="list-group list-group-flush transaction-list"
+                    *ngIf="transactionVisible">
+                    <li class="list-group-item"
+                        *ngFor="let transaction
+                     of block.transactions; let tNr = index;">
+                        <div>
+                            <b class="transaction-small">#{{tNr + 1}} </b>
+                            <div class="transaction-small"><b>Sender:</b> {{transaction.sender}}</div>
+                            <div class="transaction-small"><b>Receiver:</b> {{transaction.receiver}} </div>
+                            <div class="transaction-small"><b>Amount:</b> {{transaction.amount}}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

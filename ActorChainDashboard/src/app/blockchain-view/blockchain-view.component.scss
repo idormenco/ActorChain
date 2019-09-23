@@ -1,0 +1,32 @@
+.card-group.card-group-scroll {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.card-deck.card-deck-scroll > .card {
+    flex-basis: 35%;
+}
+
+.block-small{
+    font-size: 12px;
+}
+.transaction-small {
+    font-size: 10px;
+}
+.transaction-list{
+    height: 100px;
+    overflow: auto;
+}
+
+@media (min-width: 576px){
+.card-deck {
+    flex-flow: row;
+    margin-right: -15px;
+    margin-left: -15px;
+    overflow: auto;
+}
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}

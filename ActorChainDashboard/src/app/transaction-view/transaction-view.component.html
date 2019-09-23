@@ -1,1 +1,8 @@
-<p>transaction-view works!</p>
+<div class="card" style="width: 18rem;">
+        <div class="card-header">
+                Pending transactions:
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let trx of transactions" ><b>{{trx.sender}}</b> sent <b>{{trx.receiver}}  {{trx.amount}}$</b></li>
+        </ul>
+      </div>
