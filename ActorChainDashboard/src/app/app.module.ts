@@ -1,3 +1,4 @@
+import { TreeDiagramModule } from 'angular2-tree-diagram';
 import { TransactionViewComponent } from './transaction-view/transaction-view.component';
 import { ActorsViewComponent } from './actors-view/actors-view.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -80,7 +81,8 @@ import { BlockchainViewComponent } from './blockchain-view/blockchain-view.compo
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    TreeDiagramModule
   ],
   providers: [],
   bootstrap: [AppComponent]
